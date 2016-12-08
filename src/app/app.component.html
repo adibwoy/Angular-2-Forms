@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Angular 2 Forms</h1>
+<form #form="ngForm" novalidate>
+    <input type="text" required placeholder="Name" name="name" ngModel>
+    <button type="submit">Okay</button>
+</form>
+
+{{ form.pristine }}
