@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Employee } from './models/employee.model';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'app works!';
-    languages = ['English', 'Spanish', 'Other']
+    languages = ['English', 'Spanish', 'Other'];
+    model = new Employee('Aditya', 'Bhandari', true, 'W2', 'English');
 }

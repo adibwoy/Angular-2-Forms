@@ -3,35 +3,46 @@
     <form #form="ngForm" novalidate>
         <div class="form-group">
             <label for="firstNameId">First Name</label>
-            <input id="firstNameId" type="text" class="form-control" required name="name" ngModel>
+            <input id="firstNameId" type="text" class="form-control" required
+                name="firstName"
+                [(ngModel)]="model.firstName">
         </div>
+
         <div class="form-group">
             <label for="lastNameId">Last Name</label>
-            <input id="lastNameId" type="text" class="form-control" required name="name" ngModel>
+            <input id="lastNameId" type="text" class="form-control" required
+                name="lastName"
+                [(ngModel)]="model.lastName">
         </div>
 
         <div class="checkbox">
             <label for="fullTimeEmpCheck">
-                <input id="fullTimeEmpCheck" type="checkbox" name="is-full-time" ngModel> Full Time Employee
+                <input id="fullTimeEmpCheck" type="checkbox"
+                    name="is-full-time"
+                    [(ngModel)]="model.isFullTime"> Full Time Employee
             </label>
         </div>
-
 
         <label>Payment Type</label>
         <div class="radio">
             <label for="radioW2">
-                <input id="radioW2" type="radio" name="pay-type" value="W2" checked> W2
+                <input id="radioW2" type="radio"
+                    name="paymentType" value="W2" checked
+                    [(ngModel)]="model.paymentType"> W2
             </label>
         </div>
         <div class="radio">
             <label for="radio1099">
-                <input id="radio1099" type="radio" name="pay-type" value="1099"> 1099
+                <input id="radio1099" type="radio"
+                    name="paymentType" value="1099"
+                    [(ngModel)]="model.paymentType"> 1099
             </label>
         </div>
 
         <div class="form-group">
             <label>Primary Language</label>
-            <select class="form-control">
+            <select class="form-control" name="primaryLanguage"
+                [(ngModel)]="model.primaryLanguage">
                 <option *ngFor="let lang of languages">
                     {{ lang }}
                 </option>
@@ -40,4 +51,8 @@
 
         <button class="btn btn-primary" type="submit">Okay</button>
     </form>
+
+    Model: {{model | json}}
+    <br>
+    Angular: {{form.value | json}}
 </div>
